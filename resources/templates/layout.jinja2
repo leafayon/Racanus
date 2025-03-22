@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>{% block title %}{% endblock %} - Racanus</title>
+
+    <meta charset="UTF-8" />
+
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ url_for('home') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('home') }}">Actualités</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('home') }}">Tchat</a>
+                </li>
+            </ul>
+            <ul>
+                {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="{{ url_for('home') }}">Mon profil</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('home') }}">Se déconnecter</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ url_for('home') }}">S'inscrire</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('home') }}">Se connecter</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+lint.select = [
+    "S",    # flake8-bandit
+    "B",    # flake8-bugbear
+    "C4",   # flake8-comprehensions
+    "TC",   # flake8-type-checking
+    "SIM",  # flake8-simplify
+    "I",    # isort
+    "N",    # pep8-naming
+    "E",    # pycodestyle (error)
+    "UP",   # pyupgrade
+    "RUF",  # ruff
+]
+
+lint.ignore = []
+
+line-length = 120
+
+output-format = "grouped"
+
+fix = true
+show-fixes = true
