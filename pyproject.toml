@@ -6,17 +6,17 @@ description = "A chat website for Racan."
 requires-python = ">=3.13"
 
 dependencies = [
-    "flask>=3.1.0",
-    "flask-login>=0.6.3",
-    "python-dotenv>=1.0.1",
+    "fastapi[standard]>=0.115.12",
+    "python-dotenv>=1.1.0",
     "sqlmodel>=0.0.24",
 ]
 
 [dependency-groups]
 dev = [
     "taskipy>=1.14.1",
-    "ruff>=0.11.0",
+    "ruff>=0.11.13",
+    "ty>=0.0.1a6",
 ]
 
 [tool.taskipy.tasks]
-lint = {cmd = "ruff check", help = "Lint, Format & Type Check the project."}
+lint = {cmd = "ruff check && ty check", help = "Lint, Format & Type Check the project."}

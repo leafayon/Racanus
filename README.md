@@ -1,3 +1,4 @@
 - Feed e-lyco/agenda
 - Messagerie
-- Sondage
+- Sondages
+- Feed insta racan

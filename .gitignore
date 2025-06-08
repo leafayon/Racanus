@@ -58,3 +58,5 @@ uv.lock
 .idea
 .fleet
 .vscode
+
+*.http
