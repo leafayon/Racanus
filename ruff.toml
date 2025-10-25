@@ -11,7 +11,9 @@ lint.select = [
     "RUF",  # ruff
 ]
 
-lint.ignore = []
+lint.ignore = [
+    "N818" # pep8-naming
+]
 
 line-length = 120
 

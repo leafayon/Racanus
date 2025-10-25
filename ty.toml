@@ -1,0 +1,5 @@
+[environment]
+root = ["./src"]
+
+[rules]
+unresolved-import = "ignore"

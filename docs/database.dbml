@@ -1,0 +1,50 @@
+Project Mark {
+  database_type: 'mariadb'
+  Note: 'Racanus, a website for Racan'
+}
+
+Table user {
+  id integer [primary key, increment]
+
+  username varchar(255) [not null, unique]
+  display_name varchar(255)
+
+  password varchar(255) [not null]
+
+  role user_roles
+
+  created_at datetime [not null]
+  updated_at datetime
+}
+
+Enum user_role {
+  admin
+  moderator
+  author
+  member
+}
+
+Table article {
+  id integer [primary key, increment]
+
+  title varchar(255) [not null, unique]
+  description varchar(255) [not null]
+
+  content varchar(255) [not null]
+
+  published bool [default: false]
+
+  created_at datetime [not null]
+  updated_at datetime
+  published_at datetime
+}
+
+Table article_authors {
+  id integer [primary key, increment]
+
+  article_id integer [Ref: - article.id]
+  user_id integer [Ref: - user.id]
+
+  created_at datetime [not null]
+  updated_at datetime
+}
